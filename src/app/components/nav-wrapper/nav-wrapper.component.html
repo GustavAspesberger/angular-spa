@@ -1,0 +1,22 @@
+<nav
+  mat-tab-nav-bar
+  mat-stretch-tabs="false"
+  mat-align-tabs="start"
+  animationDuration="1000ms"
+  color="accent"
+  backgroundColor="primary"
+  [tabPanel]="panelElement"
+>
+  <a
+    mat-tab-link
+    *ngFor="let link of navLinks"
+    [routerLink]="link.link"
+    routerLinkActive
+    #rla="routerLinkActive"
+    [active]="rla.isActive"
+    [disabled]="link.disabled"
+  >
+    {{ link.label }}
+  </a>
+</nav>
+<mat-tab-nav-panel #panelElement></mat-tab-nav-panel>
